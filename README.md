@@ -13,6 +13,7 @@ https://code.visualstudio.com/
 
 4. We also recommend installing the Angular Language Service extension for Visual Studio Code : https://marketplace.visualstudio.com/items?itemName=Angular.ng-template
 
+5. To start : ``` npm install ```
 
 # Notes
 
