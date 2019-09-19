@@ -9,10 +9,13 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSortModule, MatInputModule, MatDialog, MatDialogModule, MatTabsModule, MatExpansionModule, MatDividerModule, MatStepperModule, MatRadioModule, MatTreeModule, MatBottomSheet, MatBottomSheetModule, MatProgressBarModule, MatSelectModule, MatTableModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
-
+import { PostComponent } from './post/post.component';
+import { GetComponent } from './get/get.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PostComponent,
+    GetComponent
   ],
   imports: [
     BrowserModule,

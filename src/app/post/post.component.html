@@ -1,0 +1,38 @@
+
+<!--The content below is only a placeholder and can be replaced.-->
+<form class="container-fluid mb-5" #budgetForm="ngForm">
+
+        <div class="form-group">
+            <label hidden for="id">BudgetCodeId</label>
+        <input hidden type="number" name="BudgetCodeId" class="form-control" id="id" aria-describedby="addId"  placeholder="Add id" [(ngModel)] = "budgetModel.BudgetCodeId" >
+        </div>
+        <div class="form-group">
+            <label for="year">FiscalYear</label>
+        <input type="number" #FiscalYear="ngModel" name="FiscalYear" [class.is-invalid]="FiscalYear.invalid && FiscalYear.touched" class="form-control" id="year" aria-describedby="addYear" placeholder="Add a year" [(ngModel)] = "budgetModel.FiscalYear" required>
+        </div>
+      
+       
+        <div class="form-group">
+            <label for="code">BudgetCode</label>
+        <input type="text" #BudgetCode="ngModel" maxlength="10" name="BudgetCode" [class.is-invalid]="BudgetCode.invalid && BudgetCode.touched" class="form-control" id="code" aria-describedby="addCode"  placeholder="Add code" [(ngModel)] = "budgetModel.BudgetCode" >
+        </div>
+        <div class="form-group">
+            <label for="title">BudgetTitle</label>
+        <input type="text" #BudgetTitle="ngModel" maxlength="100" name="BudgetTitle" [class.is-invalid]="BudgetTitle.invalid && BudgetTitle.touched" class="form-control" id="title" aria-describedby="addTitle"  placeholder="Add a title" [(ngModel)] = "budgetModel.BudgetTitle" >
+        </div>
+        <button class="add-btn"> Submit</button>
+      </form>
+      <div class="list">
+        <ul>
+          <li *ngFor="let item of list"  >
+              {{item.BudgetTitle}}
+              {{item.FiscalYear}}
+              {{item.BudgetCode}}
+             {{item.BudgetCodeId}}
+          </li>
+        </ul>
+      </div>
+      
+      <router-outlet></router-outlet>
+      
+      
