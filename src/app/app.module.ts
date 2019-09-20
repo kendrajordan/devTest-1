@@ -11,11 +11,17 @@ import { MatSortModule, MatInputModule, MatDialog, MatDialogModule, MatTabsModul
 import { FormsModule } from '@angular/forms';
 import { PostComponent } from './post/post.component';
 import { GetComponent } from './get/get.component';
+import { HttpClientModule} from '@angular/common/http';
+import { BudgetPostService } from 'src/app/budget-post.service';
+import { GetYearComponent } from './get-year/get-year.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     PostComponent,
-    GetComponent
+    GetComponent,
+    GetYearComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -40,10 +46,11 @@ import { GetComponent } from './get/get.component';
     MatRadioModule,
     MatInputModule,
     MatTableModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    HttpClientModule
 
   ],
-  providers: [],
+  providers: [BudgetPostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

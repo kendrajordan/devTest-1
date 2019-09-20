@@ -1,1 +1,26 @@
-<p>get works!</p>
+
+<span class="d-flex justify-content-around">
+        <a routerLink="/get/year" class="btn btn-primary btn-sm">View Budgets By Year</a>
+        <button type="button" class="btn btn-warning btn-sm">View Budgets By Title</button>
+        <button type="button" class="btn btn-danger btn-sm">View Budget By Code</button>
+</span>
+<hr>
+<table class = "table">
+        <thead>
+            <tr>
+                <th>budgetCodeId</th>
+                <th>fiscalYear</th>
+                <th>budgetCode</th>
+                <th>budgetTitle</th>
+            </tr>
+        </thead>
+        <tbody >
+                <tr *ngFor="let item of budgetsList">
+                    <td>{{item.budgetCodeId}}</td>
+                    <td>{{item.fiscalYear}}</td>
+                    <td>{{item.budgetCode}}</td>
+                    <td>{{item.budgetTitle}}</td>
+                </tr>    
+            
+        </tbody>
+    </table>

@@ -1,9 +1,9 @@
 export class Budget{
     constructor(
-        public BudgetCodeId: number,   
-        public FiscalYear: number,    
-        public BudgetCode:string,     
-        public BudgetTitle :string  
+             public budgetCodeId: number,
+            public fiscalYear: number,
+            public budgetCode: string,
+            public budgetTitle: string
     ){}
     
 }
