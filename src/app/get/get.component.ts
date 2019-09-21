@@ -8,6 +8,9 @@ import { BudgetPostService } from 'src/app/budget-post.service';
 })
 export class GetComponent implements OnInit {
   budgetsList:Budget[];
+   // Pagination parameters.
+   p: Number = 1;
+   count: Number = 6;
   constructor(private _budgetPostService: BudgetPostService) { }
 
   ngOnInit() {

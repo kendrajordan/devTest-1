@@ -15,6 +15,8 @@ import { HttpClientModule} from '@angular/common/http';
 import { BudgetPostService } from 'src/app/budget-post.service';
 import { GetYearComponent } from './get-year/get-year.component';
 import { GetTitleComponent } from './get-title/get-title.component';
+import { GetIdComponent } from './get-id/get-id.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { GetTitleComponent } from './get-title/get-title.component';
     GetComponent,
     GetYearComponent,
     GetTitleComponent,
+    GetIdComponent,
 
   ],
   imports: [
@@ -49,7 +52,8 @@ import { GetTitleComponent } from './get-title/get-title.component';
     MatInputModule,
     MatTableModule,
     MatBottomSheetModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
 
   ],
   providers: [BudgetPostService],
