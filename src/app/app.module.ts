@@ -14,6 +14,7 @@ import { GetComponent } from './get/get.component';
 import { HttpClientModule} from '@angular/common/http';
 import { BudgetPostService } from 'src/app/budget-post.service';
 import { GetYearComponent } from './get-year/get-year.component';
+import { GetTitleComponent } from './get-title/get-title.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { GetYearComponent } from './get-year/get-year.component';
     PostComponent,
     GetComponent,
     GetYearComponent,
+    GetTitleComponent,
 
   ],
   imports: [
