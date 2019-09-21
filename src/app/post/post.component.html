@@ -1,36 +1,43 @@
 
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="d-flex justify-content-center row">
-<div class="card col-xs-6" style="width: 28rem;">
-<form class="container-fluid mb-5" #budgetForm="ngForm" (ngSubmit)="onClick()" novalidate>
 
-        <div class="form-group">
-            <label hidden for="id">BudgetCodeId</label>
-        <input hidden type="number" name="budgetCodeId" class="form-control" id="id" aria-describedby="addId"  placeholder="Add id" [(ngModel)] = "budgetModel.budgetCodeId" >
-        </div>
-        <div class="form-group">
-            <label for="year">FiscalYear</label>
-        <input type="number" #fiscalYear="ngModel" maxlength="4" pattern="\d{4}$" name="fiscalYear" [class.is-invalid]="fiscalYear.invalid && fiscalYear.touched" class="form-control" id="year" aria-describedby="addYear" placeholder="Add a year" [(ngModel)] = "budgetModel.fiscalYear" required>
-            <div *ngIf="fiscalYear.errors && (fiscalYear.invalid || fiscalYear.touched)">
-                <small class="text-danger" *ngIf="fiscalYear.errors.required" >FisicalYear is Required</small>
-                <small class="text-danger" *ngIf="fiscalYear.errors.pattern">FisicalYear must be 4 digits</small>
-            </div> 
-        </div>
-        <div class="form-group">
-            <label for="code">BudgetCode</label>
-        <input type="text" #budgetCode="ngModel" maxlength="10"  name="budgetCode" [class.is-invalid]="budgetCode.invalid && budgetCode.touched" class="form-control" id="code" aria-describedby="addCode"  placeholder="Add code" [(ngModel)] = "budgetModel.budgetCode" required>
-       <!-- <small class="text-danger" [class.d-none]="BudgetCode.valid || BudgetCode.untouched" >BudgetCode is required and must be 10 digits</small> -->
-       <div *ngIf="budgetCode.errors && (budgetCode.invalid || budgetCode.touched)">
-            <small class="text-danger" *ngIf="budgetCode.errors.required">BudgetCode is required</small>
-       </div>
-        </div>
-        <div class="form-group">
-            <label for="title">BudgetTitle</label>
-        <input type="text" #budgetTitle="ngModel" maxlength="100" name="budgetTitle" [class.is-invalid]="budgetTitle.invalid && budgetTitle.touched" class="form-control" id="title" aria-describedby="addTitle"  placeholder="Add a title" [(ngModel)] = "budgetModel.budgetTitle" required>
-        <small class="text-danger" [class.d-none]="budgetTitle.valid || budgetTitle.untouched" >BudgetTitle is Required</small>
-        </div>
-        <button [disabled]="budgetForm.form.invalid" class="btn btn-primary" type="submit"> Submit</button>
-      </form>
+<div class="container-fluid d-flex justify-content-center" >
+    <div class="card" style="width: 30rem;">
+            <div class="card-body">
+                        <form class="container-fluid mb-5" #budgetForm="ngForm" (ngSubmit)="onSubmit(); budgetForm.reset()" novalidate>
+
+                                <!--<div class="form-group">
+                                    <label hidden for="id">BudgetCodeId</label>
+                                <input hidden  type="number" #budgetCodeId="ngModel" name="budgetCodeId" class="form-control" id="id" aria-describedby="addId"  placeholder="Add id" [class.is-invalid]="budgetCodeId.invalid && budgetCodeId.touched" [(ngModel)] = "budgetModel.budgetCodeId" >
+                                <div *ngIf="budgetCodeId.errors &&  budgetCodeId.touched">
+                                        <small class="text-danger" *ngIf="budgetCodeId.errors.required" >BudgetCodeId is Required</small>
+                                    </div> 
+                                </div>-->
+                                <div class="form-group">
+                                    <label for="year">FiscalYear</label>
+                                <input type="number" #fiscalYear="ngModel" pattern="\d{4}$" name="fiscalYear" [class.is-invalid]="fiscalYear.invalid && fiscalYear.touched" class="form-control" id="year" aria-describedby="addYear" placeholder="Add a year" [(ngModel)] = "budgetModel.fiscalYear" required>
+                                    <div *ngIf="fiscalYear.errors &&  fiscalYear.touched">
+                                        <small class="text-danger" *ngIf="fiscalYear.errors.required" >FisicalYear is Required</small>
+                                        <small class="text-danger" *ngIf="fiscalYear.errors.pattern">FisicalYear must be 4 digits</small>
+                                    </div> 
+                                </div>
+                                <div class="form-group">
+                                    <label for="code">BudgetCode</label>
+                                <input type="text" #budgetCode="ngModel" maxlength="10"  name="budgetCode" [class.is-invalid]="budgetCode.invalid && budgetCode.touched" class="form-control" id="code" aria-describedby="addCode"  placeholder="Add code" [(ngModel)] = "budgetModel.budgetCode" required>
+                            <!-- <small class="text-danger" [class.d-none]="BudgetCode.valid || BudgetCode.untouched" >BudgetCode is required and must be 10 digits</small> -->
+                            <div *ngIf="budgetCode.errors &&  budgetCode.touched">
+                                    <small class="text-danger" *ngIf="budgetCode.errors.required">BudgetCode is required</small>
+                            </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="title">BudgetTitle</label>
+                                <input type="text" #budgetTitle="ngModel" maxlength="100" name="budgetTitle" [class.is-invalid]="budgetTitle.invalid && budgetTitle.touched" class="form-control" id="title" aria-describedby="addTitle"  placeholder="Add a title" [(ngModel)] = "budgetModel.budgetTitle" required>
+                                <small class="text-danger" [class.d-none]="budgetTitle.valid || budgetTitle.untouched" >BudgetTitle is Required</small>
+                                </div>
+                                <button [disabled]="budgetForm.form.invalid" class="btn btn-primary" type="submit"> Submit</button>
+                            </form>
+            </div>
+            </div>
     </div>
 
   <!--div class="list">
@@ -43,32 +50,26 @@
           </li>
         </ul>
       </div>-->
-      <div class="col-xs-6">
-           <h5 class="text-center"> {{msg}} </h5>
-      <div *ngIf="ifSuccess"> 
-        <table class = "table">
-            <thead>
-                <tr>
-                    <th>budgetCodeId</th>
-                    <th>fiscalYear</th>
-                    <th>budgetCode</th>
-                    <th>budgetTitle</th>
-                </tr>
-            </thead>
-            <tbody>
-               
-                    <tr>
-                        <td>{{latest.budgetCodeId}}</td>
-                        <td>{{latest.fiscalYear}}</td>
-                        <td>{{latest.budgetCode}}</td>
-                        <td>{{latest.budgetTitle}}</td>
-                    </tr>    
-                
-            </tbody>
-        </table>
-      </div>
-      </div>
+    
+      <div *ngIf="msg">
+            <h3 [class.text-danger]="msg !== 'Data added.'" [class.text-success]="msg == 'Data added.'" class="text-center">{{msg}}</h3>
     </div>
+    <div class="d-flex justify-content-center mt-5" >
+
+            <div *ngIf="latest.budgetCodeId != null" class="card text-center col-xs-6 " >
+    
+                    <div class="card-body">
+                            <h5 class="card-title">Title: {{latest.budgetTitle}}</h5>
+                        <ul class="list-unstyled text-left">
+                            <li>Id: {{latest.budgetCodeId}}</li>
+                            <li>Year: {{latest.fiscalYear}}</li>
+                            <li> Budget Code: {{latest.budgetCode}}</li>
+                    </ul>
+                    </div>
+    
+        </div>
+    </div>
+    
       <router-outlet></router-outlet>
       
       

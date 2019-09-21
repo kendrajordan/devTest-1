@@ -1,0 +1,13 @@
+hr{
+    background-color:#336A90;
+}
+thead{
+    background-color:#5299D3;
+}
+
+.ngx-pagination{
+    width:400px;
+    background-color:lightgray;
+    padding-left:0;
+    float:right;
+}

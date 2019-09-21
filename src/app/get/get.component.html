@@ -5,6 +5,7 @@
         <button routerLink="/get/id" type="button" class="btn btn-danger btn-sm">View Budget By Id</button>
 </span>
 <hr>
+<div class="container col-xs-8">
 <table class = "table">
         <thead>
             <tr>
@@ -24,7 +25,8 @@
             
         </tbody>
     </table>
-  <!--Including the pagination control.-->
+      <!--Including the pagination control.-->
   <div class="text-right">
         <pagination-controls (pageChange)="p = $event"></pagination-controls>
       </div>
+    </div>
