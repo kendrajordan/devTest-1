@@ -1,15 +1,15 @@
 <div>
-    <span class="d-flex justify-content-around">
-            <a http="*" *ngFor="let year of budgetYears" (click)="getByYear(year)" class="btn btn-primary">{{year}}</a>
+    <span class="d-flex justify-content-around pt-2">
+            <a http="*" *ngFor="let year of budgetYears" (click)="getByYear(year)" class="btn btn-info text-white">{{year}}</a>
     </span>        
 
 </div>
-<hr>
-<h3 class="text-center">{{currentYear}}</h3>
-<hr>
+
+<h3 class="text-center pt-3 pb-3">{{currentYear}}</h3>
+
 <div class="container-fluid row d-flex justify-content-center">
 
-            <div class="card text-center col-md-3"  style="width: 18rem;" *ngFor="let item of budgetsList">
+            <div class="card text-white bg-info mr-2 mb-2 text-center col-md-3"  style="width: 18rem;" *ngFor="let item of budgetsList">
 
                     <div class="card-body">
                             <h5 class="card-title">Title: {{item.budgetTitle}}</h5>

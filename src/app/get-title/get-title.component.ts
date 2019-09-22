@@ -10,7 +10,7 @@ export class GetTitleComponent implements OnInit {
   budgetsList:Budget[];
   budgetTitles = [];
   codes = [];
-  msg = "Click the Budget Titles to See the Related Budget Information"
+  msg = "Click A Budget Title"
   constructor(private _budgetPostService: BudgetPostService) { }
 
   ngOnInit() {
