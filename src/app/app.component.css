@@ -1,0 +1,18 @@
+
+.ngx-pagination{
+   
+    background-color:lightgray;
+    padding-left:0;
+    
+   
+}
+ul.ngx-pagination{
+    margin-bottom:0;
+}
+.d-flex-column.justify-content-around.text-center{
+    background-color:burlywood;
+    padding-bottom: 10px;
+}
+.pointer{
+    cursor: pointer;
+}
