@@ -1,0 +1,23 @@
+<div>
+    <span class="d-flex justify-content-around pt-2">
+            <a http="*" *ngFor="let year of budgetYears" (click)="getByYear(year)" class="btn btn-info text-white">{{year}}</a>
+    </span>        
+
+</div>
+
+<h3 class="text-center pt-3 pb-3">{{currentYear}}</h3>
+
+<div class="container-fluid row d-flex justify-content-center">
+
+            <div class="card text-white bg-info mr-2 mb-2 text-center col-md-3"  style="width: 18rem;" *ngFor="let item of budgetsList">
+
+                    <div class="card-body">
+                            <h5 class="card-title">Title: {{item.budgetTitle}}</h5>
+                        <ul class="list-unstyled">
+                            <li>Id: {{item.budgetCodeId}}</li>
+                            <li> Budget Code: {{item.budgetCode}}</li>
+                    </ul>
+                    </div>
+
+        </div>
+</div>

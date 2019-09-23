@@ -1,0 +1,36 @@
+
+<span class="d-flex justify-content-around pt-3 pb-3 border-bottom border-dark">
+        <a routerLink="/get/year" class="btn btn-primary btn-sm">View Budgets By Year</a>
+        <a routerLink="/get/title"  class="btn btn-warning btn-sm">View Budgets By Title</a>
+        <button routerLink="/get/id" type="button" class="btn btn-danger btn-sm">View Budget By Id</button>
+</span>
+<h4 class="text-center mt-3"> Budgets Information</h4>
+<div class="d-flex justify-content-center">
+<div class="card" style="width:30rem">
+
+<table class = "table table-striped rounded">
+        <thead class="text-white bg-info">
+            <tr>
+                <th>budgetCodeId</th>
+                <th>fiscalYear</th>
+                <th>budgetCode</th>
+                <th>budgetTitle</th>
+            </tr>
+        </thead>
+        <tbody >
+                <tr  *ngFor="let item of budgetsList | paginate: { itemsPerPage: count, currentPage: p }">
+                    <td>{{item.budgetCodeId}}</td>
+                    <td>{{item.fiscalYear}}</td>
+                    <td>{{item.budgetCode}}</td>
+                    <td>{{item.budgetTitle}}</td>
+                </tr>    
+            
+        </tbody>
+    </table>
+      <!--Including the pagination control.-->
+  <div class="text-center">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </div>
+    
+</div>
